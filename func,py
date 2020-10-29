@@ -1,0 +1,25 @@
+import torch
+import numpy as np
+import matplotlib.pyplot as plt
+
+def loss_fig(batch, train_loss, test_loss):
+    plt.grid(True)
+    plt.title("Loss")
+    plt.plot(batch, train_loss, label='train')
+    plt.plot(batch, test_loss, label='test')
+    plt.xlabel("batch")
+    plt.ylabel("loss")
+    plt.legend(loc='upper right')
+    plt.savefig("./fig/loss")
+    plt.clf()
+    plt.close()
+
+def acc_fig(batch, accuracy):
+    plt.grid(True)
+    plt.title("Accuracy")
+    plt.plot(batch, accuracy)
+    plt.xlabel("batch")
+    plt.ylabel("accuracy")
+    plt.savefig("./fig/acc")
+    plt.clf()
+    plt.close()
